@@ -8,10 +8,15 @@
 import SwiftUI
 
 @main
-struct TimerSwiftUIHWApp: App {
+struct TimerSwiftUIApp: App {
+    
+    @StateObject private var user = UserManager()
+    
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            StarterView()
+                .environmentObject(user)
         }
     }
 }
